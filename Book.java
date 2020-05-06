@@ -1,6 +1,6 @@
 package fangwenzhemoshi;
 
-public class Apple implements IProduct {
+public class Book implements IProduct {
 
 	@Override
 	public void accpet(AVisitor vistor) {
