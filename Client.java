@@ -1,36 +1,12 @@
-
-package beiwanglumoshi;
+package celuemoshi;
 
 public class Client {
-	public static void main(String[] args) {
-		OriginatorChess chess=new OriginatorChess(new MementoChess("ºÚ",2,2));
-		play(chess);
-		chess.SetX(3);
-		play(chess);
-		chess.SetX(6);
-		play(chess);
-		undo(chess,index);
-		undo(chess,index);
-		redo(chess,index);
-		redo(chess,index);
+	TravelStrategy travelStrategy;
+	public void setTravelStategy(TravelStrategy travelStrategy) {
+		this.travelStrategy=travelStrategy;
 	}
-	private static int index=0;
-	private static CaretakerChess caretaker=new CaretakerChess();
-	public static void play(OriginatorChess chess) {
-		index++;
-		caretaker.AddMem(chess.SavetoMemento());
-		chess.Show();
-	}
-	public static void undo(OriginatorChess chess,int i) {
-		System.out.println("****»ÚÆå*****");
-		index--;
-		chess.Restore(caretaker.getMem(index-1));
-		chess.Show();
-	}
-	public static void redo(OriginatorChess chess,int i) {
-		System.out.println("***³·Ïú»ÚÆå****");
-		chess.Restore(caretaker.getMem(index));
-		index++;
-		chess.Show();
-	}
+public static void main(String[] args) {
+	HighTrainStragy travel=new HighTrainStragy();
+	travel.travelAlgoritlm();
+}
 }
