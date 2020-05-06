@@ -1,4 +1,4 @@
-package chouxianggongchang;
+package gongchangfangfamoshi;
 
 public class PizzaHutcheese extends Pizza {
 

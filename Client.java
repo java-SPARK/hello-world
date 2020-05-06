@@ -1,10 +1,14 @@
-package danlimoshi;
+package gongchangfangfamoshi;
 
 public class Client {
+
 	public static void main(String[] args) {
-		Fruitstore fre1=Fruitstore.getstore();
-		Fruitstore fre2=Fruitstore.getstore();
-		System.out.println("fre1 "+fre1.hashCode());
-		System.out.println("fre2 "+fre2.hashCode());
+		// TODO 自动生成的方法存根
+/*		创建KFC的披萨
+		new KFCOrderPizza();
+		创建必胜客的披萨*/
+		new PizzaHutOrderPizza();
+
 	}
+
 }

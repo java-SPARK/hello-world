@@ -1,34 +1,27 @@
- package chouxianggongchang;
+package gongchangfangfamoshi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class OrderPizza {
-	AbsFactory factory;
-	public OrderPizza(AbsFactory factory){
-		setfactory(factory);
-	}
-	public void setfactory(AbsFactory factory) {
+import jiandangongchangmoshi.Cheese;
+import jiandangongchangmoshi.Greek;
+import jiandangongchangmoshi.SimpleFactory;
+
+public abstract class OrderPizza {
+	public OrderPizza(){
 		Pizza pizza=null;
-		String ordertype="";
-		this.factory=factory;	
+		String ordertype;
 		do {
-			ordertype=gettype();
-			pizza=factory.createpizza(ordertype);
-			if(pizza!=null) {
+			ordertype=gettype(); 
+			pizza=createpizza(ordertype);
 			pizza.prepare();
 			pizza.bake();
 			pizza.cut();
 			pizza.box();
-			}else {
-				System.out.println("¶©¹ºÊ§°Ü~");
-				break;
-			}
-		
-		}while(true);
-	}	
-public String gettype(){
+			}while(true);
+	}
+	public String gettype(){
 		
 		try {
 		     BufferedReader string=new BufferedReader(new InputStreamReader(System.in));
@@ -41,4 +34,5 @@ public String gettype(){
 			return "";
 		}			
 	}
+	abstract Pizza createpizza(String ordertype) ;
 }

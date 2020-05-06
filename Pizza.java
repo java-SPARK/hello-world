@@ -1,4 +1,4 @@
-package chouxianggongchang;
+package gongchangfangfamoshi;
 
 public abstract class Pizza {
 	protected  String name;
