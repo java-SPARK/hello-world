@@ -1,12 +1,21 @@
-package waiguanmoshi;
+package xiangyuanmoshi;
+
+import java.util.Random;
 
 public class Client {
-
 	public static void main(String[] args) {
-		// TODO 自动生成的方法存根
-		Facade fac=new Facade();
-		fac.on();
-		fac.off();
+		Random rm=new Random();
+		PieceFactory pfactory=new PieceFactory();
+		for(int i=0;i<19;i++)
+			for(int j=0;j<19;j++) {
+				Apiece p=null;
+				if(rm.nextInt()%2==0) {
+					p=pfactory.GetPiece("白棋");
+				}else {
+					p= pfactory.GetPiece("黑棋");
+				}
+				p.play(rm.nextInt(19), rm.nextInt(19));
+			}
+		System.out.println("共有棋子对象个数是:"+pfactory.GetPieceCount());
 	}
-
 }
