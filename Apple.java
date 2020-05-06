@@ -1,7 +1,11 @@
-package yuanxingmoshi;
+package zuhemoishi;
 
-public class Apple extends Myfruit {
-	public Apple() {
-		kind="Apple";
+public class Apple extends MyElement {
+
+	@Override
+	public void eat() {
+		// TODO 自动生成的方法存根
+		System.out.println("吃苹果！");
 	}
+
 }
