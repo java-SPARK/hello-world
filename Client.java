@@ -1,14 +1,11 @@
-package gongchangfangfamoshi;
+package jiandangongchangmoshi;
 
 public class Client {
 
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-/*		创建KFC的披萨
-		new KFCOrderPizza();
-		创建必胜客的披萨*/
-		new PizzaHutOrderPizza();
-
+		new OrderPizza(new SimpleFactory());	
+		System.out.println("退出程序~");	
 	}
 
 }

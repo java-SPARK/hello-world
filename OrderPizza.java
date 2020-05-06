@@ -1,25 +1,30 @@
-package gongchangfangfamoshi;
+package jiandangongchangmoshi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import jiandangongchangmoshi.Cheese;
-import jiandangongchangmoshi.Greek;
-import jiandangongchangmoshi.SimpleFactory;
-
-public abstract class OrderPizza {
-	public OrderPizza(){
-		Pizza pizza=null;
-		String ordertype;
+public class OrderPizza {
+	SimpleFactory simpleFactory;
+	Pizza pizza=null;
+	public  OrderPizza(SimpleFactory simpleFactory) {
+		setFactory(simpleFactory);		
+	}
+	public void setFactory(SimpleFactory simpleFactory) {
+		String ordertype="";
 		do {
 			ordertype=gettype(); 
-			pizza=createpizza(ordertype);
-			pizza.prepare();
-			pizza.bake();
-			pizza.cut();
-			pizza.box();
-			}while(true);
+			pizza=this.simpleFactory.createPizza(ordertype);
+			if(pizza!=null) {
+				pizza.prepare();
+				pizza.bake();
+				pizza.cut();
+				pizza.box();
+			}else {
+				System.out.println("∂©π∫pizza ß∞‹£°");
+				break;
+			}
+		}while(true);	
 	}
 	public String gettype(){
 		
@@ -34,5 +39,4 @@ public abstract class OrderPizza {
 			return "";
 		}			
 	}
-	abstract Pizza createpizza(String ordertype) ;
 }
