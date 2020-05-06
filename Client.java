@@ -1,9 +1,12 @@
-package shipeiqimoshi;
+package waiguanmoshi;
 
 public class Client {
+
 	public static void main(String[] args) {
-		System.out.println("类适配器"+new Adapter().power());
-		Adapter1 ada=new Adapter1(new Adaptee());
-		System.out.println("对象适配器"+ada.power());
+		// TODO 自动生成的方法存根
+		Facade fac=new Facade();
+		fac.on();
+		fac.off();
 	}
+
 }
