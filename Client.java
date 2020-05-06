@@ -1,12 +1,13 @@
-package celuemoshi;
+package diedaiqi;
 
 public class Client {
-	TravelStrategy travelStrategy;
-	public void setTravelStategy(TravelStrategy travelStrategy) {
-		this.travelStrategy=travelStrategy;
+	public static void main(String[] args) {
+		MyList list =new ConcreteAggregate();
+		list.add("Áõ±¸");
+		list.add("¹ØÓð");
+		Iterator iter=list.iterator();
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
 	}
-public static void main(String[] args) {
-	HighTrainStragy travel=new HighTrainStragy();
-	travel.travelAlgoritlm();
-}
 }
